@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1f3160;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#total_wrapper {
+  position: relative;
+  width: 1200px;
+  height: 640px;
+  margin: 0 auto;
+}
+
+#total_wrapper.step_capsule {
+  background: url('./assets/initial2-bg.jpg') no-repeat;
+}
+
+#total_wrapper.step_washing {
+  background: url('./assets/end-bg.jpg') no-repeat;
+}
+
+.capsule {
+  position: absolute;
+  bottom: 90px;
+  left: 60px;
+  width: 150px;
+  height: 150px;
+  opacity: 0;
+}
+
+.capsule.active {
+  opacity: 1;
+  animation: capsuleAnimation 1s 0.2s linear infinite alternate;
+}
+
+.laundry {
+  position: absolute;
+  bottom: 90px;
+  left: 320px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.2;
+}
+
+.laundry.active {
+  opacity: 1;
+}
+
+.laundry.hide {
+  opacity: 0;
+}
+
+.washing {
+  position: absolute;
+  bottom: 70px;
+  left: 630px;
+  width: 450px;
+  height: 380px;
+}
+
+.washing.active {
+  animation: frisson 0.05s 0.05s linear infinite alternate;
+}
+
+.washing.hide {
+  display: none;
+}
+
+.washing_target {
+  background-color: transparent;
+  position: absolute;
+  bottom: 200px;
+  left: 870px;
+  width: 150px;
+  height: 150px;
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  font-size: 36px;
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#done_washing {
+  position: absolute;
+  bottom: 100px;
+  left: 123px;
+  width: 300px;
+  color: #fff;
+  text-align: center;
+  display: none;
+}
+
+#done_washing.active {
+  display: block;
+}
+
+#done_washing .header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+  margin: 0;
+}
+
+#done_washing .content {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  line-height: 18px;
+  margin: 10px 0;
+}
+
+@keyframes capsuleAnimation {
+  to {
+    transform: translate(20px);
+  }
+}
+
+@keyframes frisson {
+  from {
+    transform: rotate(-1deg);
+  }
+  to {
+    transform: rotate(1deg);
+  }
+}
